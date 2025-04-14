@@ -5,12 +5,12 @@ Add page
 {%endblock%}
 
 {%block body%}
-<form action="{% url 'encyclopedia:create' %}" method="POST">
+<form action="{% url 'encyclopedia:edit' name %}" method="POST">
     {% csrf_token %}
 <label><p>Edit page</p></label>
-<input type="text" name="addpage"/>
+<input type="text" value={{name}} name="editpage"/>
 <p><label for="createpage">edit the page description</label></p>
-<textarea id="create" name="addpagedes">{{editpage}}</textarea>
+<textarea id="create" name="editpagedes">{{pagedes}}</textarea>
 <input type="submit" value="Save"/>
 </form>
 {%endblock%}
